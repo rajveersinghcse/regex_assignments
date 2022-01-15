@@ -1,0 +1,98 @@
+# Git & Github Task
+This is repo for git clone example //Do need to download
+
+This Repository for to clone the git repo at your system. And You can read blog upon git and github form my linkedin page.
+
+Q.1. What is the difference between pushing and pulling?
+Ans: Pushing: Pushing sends the recent commit history from your local repository up to GitHub.
+Pulling: A pull grabs any changes from the GitHub repository and merges them into your local repository.
+If you're the only one working on a repository, pushing is fairly simple. If there are others accessing the repository, you may need to pull before you can push.
+
+Q.2. How to initialize a new git repository[ Describe all the steps ]?
+Ans: A new repository from scratch
+ ● Create a directory to contain the project.
+ ● Go into the new directory.
+ ● Type git init.
+ ● Write some code.
+ ● Type git add to add the files.
+ ● Type git commit.
+The first file to create is probably a ReadMe file.
+A new repo from an existing project
+ ●Go into the directory containing the project.
+ ●Type git init.
+ ●Type git add to add all of the relevant files.
+ ●You’ll probably want to create a .gitignore file right away, to indicate all of the files you don’t want to track. Use git add .gitignore, too.
+ ●Type git commit.
+
+Q.3. What is the use of git clone and how to use it?
+Ans: git clone is primarily used to point to an existing repo and make a clone or copy of that repo in a new directory, at another location. The original repository can be located on the local filesystem or remote machine-accessible supported protocols.
+Syntax: git clone <repository URL>  
+Step 1: Open GitHub and navigate to the main page of the repository.
+Step 2: Under the repository name, click on Clone or download.
+Step 3: Select the Clone with HTTPS section and copy the clone URL for the repository. For the empty repository, you can copy the repository page URL from your browser and skip to the next step.
+Step 4: Open Git Bash and change the current working directory to your desired location where you want to create the local copy of the repository.
+Step 5: Use the git clone command with repository URL to make a copy of the remote repository. See the below command:
+git clone https://github.com/rajveercse/git-github.git  
+Now, Press Enter. Hence, your local cloned repository will be created. See the below output:
+If you want to clone a repository into a Specific Local Folder:
+ git clone https://github.com/rajveercse/git-github.git "new folder"  
+
+Q.4. How to ignore some files/folders from pushing?
+Ans: .gitignore can be used to ignore files and not push them.
+
+Q.5. What do you mean by Branch?
+● Which branch should be used to keep deployment-ready code?
+● Create a new branch called development from the main branch.
+● Check out one more branch deployment from the previous branch.
+● Push different data into both branches.
+● Merge data from both branches to the main branch.
+Ans: A branch represents an independent line of development. Branches serve as an abstraction for the edit/stage/commit process. You can think of them as a way to request a brand new working directory, staging area, and project history.
+ The developers in the team constantly commit their work into a single, central branch—which is always in a deployment-ready state. In other words, the main branch for the project should only contain tested and quality work, and should never be broken.
+ a new branch called development from the main branch:
+$ git branch development
+This will create a new branch. But before you start making changes to your code, you will have to first switch to the new branch you just created. To do that, run
+$ git checkout development
+Many developers, especially when they’re just getting started, forget to switch to the new branch. That’s why you can use this command that will create the new branch and immediately switch you to it:
+$ git checkout -b development
+Once you’ve created a new branch and switched to it, you can start making changes in your code. However, all of these changes (including the new branch) are still only in your local machine.
+$ git push -u origin development
+ ● Check out one more branch deployment from the previous branch
+$ git checkout -b deployment
+$ git commit -m "deployment branch"
+$ git push -u origin deployment
+ ● Merging a Branch
+$ git checkout development
+$ git merge deployment
+$ git push origin development
+$ git checkout master
+$ git merge development
+$ git push origin master
+
+Q.6. How to resolve conflict with the merge?
+Ans: There are a few steps that could reduce the steps needed to resolve merge conflicts in Git.
+The easiest way to resolve a conflicted file is to open it and make any necessary changes. After editing the file, we can use the git add a command to stage the new merged content. The final step is to create a new commit with the help of the git commit command. Git will create a new merge commit to finalize the merge
+Let us now look into the Git commands that may play a significant role in resolving conflicts.
+Git Commands to Resolve Conflicts
+● git log --merge 
+The git log --merge command helps to produce the list of commits that are causing the conflict
+● git diff 
+The git diff command helps to identify the differences between the states repositories or files
+● git checkout 
+The git checkout command is used to undo the changes made to the file, or for changing branches
+● git reset --mixed 
+The git reset --mixed command is used to undo changes to the working directory and staging area
+● git merge --abort
+The git merge --abort command helps in exiting the merge process and returning to the state before the merging began
+● git reset
+The git reset command is used at the time of merge conflict to reset the conflicted files to their original state.
+
+Q.7. What is rebase and how is it different from merge in git?
+Ans: Git rebases and merges both integrate changes from one branch into another. Where they differ is how it's done. Git rebases moves a feature branch into a master. Git merge adds a new commit, preserving the history.
+Git Rebase
+● Streamlines a potentially complex history.
+● Avoids merging commit “noise” in busy repos with busy branches.
+● Cleans intermediate commits by making them a single commit, which can be helpful for DevOps teams.
+● Git Merge
+● Simple and familiar.
+● Preserves complete history and chronological order.
+● Maintains the context of the branch.
