@@ -1,0 +1,137 @@
+Task 7: Numpy Assignment
+Q.1. Numpy stands for?
+Ans 1: NumPy stands for Numerical Python and it is a core scientific computing library in Python. It provides efficient multi-dimensional array objects.
+
+Q.2. The most important object defined in Numpy is an N-dimensional array type called?
+Ans 2: The most important object defined in NumPy is an N-dimensional array type called ndarray. It describes the collection of items of the same type. Items in the collection can be accessed using a zero-based index.
+
+Q.3: What will be output for the
+import numpy as np
+a = np.array([1, 2, 3], dtype = complex)
+print (a)
+a = np.array([1,2,3])
+print (a)
+a = np.array([1, 2, 3], dtype = float)
+print (a,'\n')
+​
+​
+a = np.dtype('i4')
+print (a)
+a = np.array([1, 2, 3,4,5], ndmin = 2)
+print (a,'\n')
+​
+dt = np.dtype([('age',np.int8)])
+a = np.array([(10,),(20,),(30,)],dtype = dt)
+print (a['age'])
+​
+[1.+0.j 2.+0.j 3.+0.j]
+[1 2 3]
+[1. 2. 3.] 
+
+int32
+[[1 2 3 4 5]] 
+
+[10 20 30]
+a = np.array([1,2,3,5,8])
+b = np.array([0,3,4,2,1])
+c = a + b
+c = c*a
+print (c[2],'\n')
+​
+21 
+
+a = np.array([1,2,3,5,8])
+a = a + 1
+print (a[1],'\n')
+​
+3 
+
+a = np.array([[1,2,3],[0,1,4]])
+print (a.size,'\n')
+a = np.array([1,2,3,5,8])
+print (a.ndim)
+print (a.shape,'\n')
+​
+6 
+
+1
+(5,) 
+
+a = np.array([[1,2,3],[0,1,4]])
+b = np.zeros((2,3), dtype=np.int16)
+c = np.ones((2,3), dtype=np.int16)
+d = a + b + c
+​
+print (d[1,2])
+print (d.size)
+
+5
+6
+
+
+Q.4 You have a matrix defined as
+below:
+
+A = np.array([[6, 1, 1], [4, -2, 5], [2, 8, 7]])
+
+Find its - rank, determinant, trace, inverse, transpose.
+
+:
+a = np.array([[6, 1, 1], [4, -2, 5], [2, 8, 7]])
+print("This is the matrix is given :",'\n',a)
+This is the matrix is given : 
+ [[ 6  1  1]
+ [ 4 -2  5]
+ [ 2  8  7]]
+print("This is the rank of the matrix : ",np.linalg.matrix_rank(a))
+print("This is the determinant of the matrix : ",np.linalg.det(a))
+print("This is the trace og the matrix :",np.trace(a))
+print("This is the inverse of the matrix :\n",np.linalg.inv(a))
+print("This is the transpose of the matrix :\n",np.transpose(a))
+This is the rank of the matrix :  3
+This is the determinant of the matrix :  -306.0
+This is the trace og the matrix : 11
+This is the inverse of the matrix :
+ [[ 0.17647059 -0.00326797 -0.02287582]
+ [ 0.05882353 -0.13071895  0.08496732]
+ [-0.11764706  0.1503268   0.05228758]]
+This is the transpose of the matrix :
+ [[ 6  4  2]
+ [ 1 -2  8]
+ [ 1  5  7]]
+
+
+Q.5 Type these lines of code and check
+the output for each of them.
+
+list1 = [1, 2, 3, 4 ,5, 6]
+
+list2 = [10, 9, 8, 7, 6, 5]
+
+list1*list2
+
+list1+list2
+
+list1%list2
+
+list1/list2
+
+list1-list2
+
+list1^list2
+
+list1 = np.array([1, 2, 3, 4 ,5, 6])
+list2 = np.array([10, 9, 8, 7, 6, 5])
+list1*list2
+array([10, 18, 24, 28, 30, 30])
+list1+list2
+array([11, 11, 11, 11, 11, 11])
+list1%list2
+array([1, 2, 3, 4, 5, 1], dtype=int32)
+list1/list2
+array([0.1       , 0.22222222, 0.375     , 0.57142857, 0.83333333,
+       1.2       ])
+list1-list2
+array([-9, -7, -5, -3, -1,  1])
+list1^list2
+array([11, 11, 11,  3,  3,  3], dtype=int32)
