@@ -6,6 +6,7 @@ Q.2. The most important object defined in Numpy is an N-dimensional array type c
 Ans 2: The most important object defined in NumPy is an N-dimensional array type called ndarray. It describes the collection of items of the same type. Items in the collection can be accessed using a zero-based index.
 
 Q.3: What will be output for the
+Ans:
 import numpy as np
 a = np.array([1, 2, 3], dtype = complex)
 print (a)
@@ -69,8 +70,8 @@ print (d.size)
 6
 
 
-Q.4 You have a matrix defined as
-below:
+Q.4 You have a matrix defined as below:
+Ans:
 
 A = np.array([[6, 1, 1], [4, -2, 5], [2, 8, 7]])
 
@@ -101,8 +102,8 @@ This is the transpose of the matrix :
  [ 1  5  7]]
 
 
-Q.5 Type these lines of code and check
-the output for each of them.
+Q.5 Type these lines of code and check the output for each of them.
+Ans:
 
 list1 = [1, 2, 3, 4 ,5, 6]
 
