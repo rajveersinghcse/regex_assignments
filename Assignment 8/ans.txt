@@ -1,0 +1,60 @@
+Question 1: Write a function which takes a list and a number as arguments. The function returns true if the number is present in the list otherwise false.
+
+def is_present(lst:list,num):
+    return num in lst
+
+a = input("Enter the numbers : ")
+b = input("Enter the number :")
+is_present(a,b)
+
+
+Question 2: Write a function which takes a list of numbers as arguments. The function returns a list of same length with Boolean values. True for numbers in the list which are prime False otherwise. (Other helping functions can be created).
+
+def lst_is_prime(lst:list):
+    def is_prime(prm):
+        if prm>1:
+            for i in range (2,int(prm**(1/2))+1):
+                if prm%i==0:
+                    return False
+            else:
+                return True
+        else:
+            return False
+    return list(map(is_prime,lst))
+
+print(lst_is_prime([2, 3, 5, 7, 11]))
+print(lst_is_prime([6, 8, 9, 10, 11]))
+
+
+Question 3: Write a function which takes a list and an integer as argument. The function should return True if there is any pair of two consecutive numbers whose sum equals the integer (passed in the argument) otherwise False.
+
+def sum_consec(lst:list, num):
+    for i in range(len(lst)-1):
+        if lst[i]+lst[i+1]==num:
+            return True
+    else:
+        return False
+print(sum_consec([1,2,3,4,5,6],7))
+print(sum_consec([1,2,3,4,5,6],8))
+
+
+Question 4: Given two strings of equal length containing alphabet characters only, write a function which calculates the distance between these two strings. The distance can be calculated in following manner : +2 for same letter at a given position, -1 for a different letter at a given position.
+
+def dist_string(str1:str,str2:str):
+    if len(str1)!=len(str2):
+        return "Enter equal length strings"
+    if str1.isalpha() and str2.isalpha():
+        dist =0
+        for k in range(len(str1)):
+            if str1.lower()[k]==str2.lower()[k]:
+                dist+=2
+            else:
+                dist -=1
+        return f"Distance between two strings is {dist}"
+    else:
+        return "Enter alphabet characters only"
+    
+print(dist_string("asdf","fddsa"))
+print(dist_string("asdf","fdds"))
+print(dist_string("asdf","fdds1"))
+print(dist_string("asdf","asdfd"))
